@@ -61,7 +61,9 @@ export class AuthService {
 
   readonly testUrl = 'https://sheq.pythonanywhere.com/api';
 
-  readonly BaseURI = 'http://localhost:8000/api';
+  readonly BaseURI = 'https://sheq.pythonanywhere.com/api';
+
+  // readonly BaseURI = 'http://localhost:8000/api';
 
 
   // login(formData): Observable<any> {

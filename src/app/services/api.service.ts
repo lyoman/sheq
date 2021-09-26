@@ -37,8 +37,8 @@ export class ApiService {
   };
 
   readonly BaseURI = 'https://sheq.pythonanywhere.com/api';
-  // readonly portBaseUrl = 'https://sheq.pythonanywhere.com/api';
-  readonly portBaseUrl = 'http://localhost:8000/api';
+  readonly portBaseUrl = 'https://sheq.pythonanywhere.com/api';
+  // readonly portBaseUrl = 'http://localhost:8000/api';
 
   constructor(private http: HttpClient) { }
 

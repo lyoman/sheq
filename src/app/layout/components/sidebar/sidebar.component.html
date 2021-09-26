@@ -1,22 +1,54 @@
 <nav [ngClass]="{ sidebarPushRight: isActive, collapsed: collapsed }" class="sidebar">
     <div class="list-group">
         <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/dashboard">
-            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+            <i class="fa fa-fw fa-home"></i>&nbsp;
             <span>{{ 'Dashboard' }}</span>
         </a>
-        <a [routerLinkActive]="['router-link-active']" [routerLink]="['/administration']" class="list-group-item">
+        <!-- <a [routerLinkActive]="['router-link-active']" [routerLink]="['/administration']" class="list-group-item">
             <i class="fa fa-fw fa-wrench"></i>&nbsp;
             <span>{{ 'Administration' }}</span>
-        </a>
-        <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/user/profile">
+        </a> -->
+        <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/profile">
             <i class="fa fa-fw fa-address-card"></i>&nbsp;
             <span>{{ 'Profile' }}</span>
         </a>
-        
-        <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/osh/risk-assessment/pretask">
-            <i class="fa fa-fw fa-plus-square"></i>&nbsp;
-            <span>{{ 'IMS - 04' }}</span>
-        </a>
+
+
+        <div class="nested-menu">
+            <a (click)="addExpandClass('pages')" class="list-group-item" [routerLinkActive]="['router-link-active']" routerLink="/ims-04">
+                <i class="fa fa-fw fa-plus-square"></i>&nbsp;
+                <span>{{ 'IMS - 04' }}</span>
+            </a>
+            <li [class.expand]="showMenu === 'pages'" class="nested">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLinkActive]="['router-link-active']" routerLink="/ims-04/organograms">
+                            <i class="fa fa-monument"></i>&nbsp;
+                            <span>{{ 'Organograms' }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLinkActive]="['router-link-active']" routerLink="/ims-04/process-flow-charts">
+                            <i class="fa fa-monument"></i>&nbsp;
+                            <span>{{ 'Process Flow Charts' }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLinkActive]="['router-link-active']" routerLink="/ims-04/needs-and-expectations">
+                            <i class="fa fa-monument"></i>&nbsp;
+                            <span>{{ 'Needs and Expectations' }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLinkActive]="['router-link-active']" routerLink="/ims-04/complaints-register">
+                            <i class="fa fa-monument"></i>&nbsp;
+                            <span>{{ 'Complaints Register' }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+
         <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/osh/risk-assessment/issue-based">
             <i class="fa fa-fw fa-plus-circle"></i>&nbsp;
             <span>{{ 'IMS - 05' }}</span>
