@@ -1,0 +1,79 @@
+<div class="">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/dashboard']">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">All Approval Requests</li>
+        </ol>
+    </nav>
+    <h2 class="header-style">All Approval Requests</h2>
+    <hr>
+
+    <div class="row">
+        <div class="form-group col-md-6">
+            <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row" *ngIf="!loading">
+        <!-- <h3 class="content-style" style="text-align: center;width: 100%;">{{ 'Submitted Results' }}</h3> -->
+        <table class="table table-bordered table-responsive table-striped table-hover raw-materials" *ngIf="userResults">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Specialist Area</th>
+                    <th>Medicall Staffer</th>
+                    <th>Status</th>
+                    <th>Approve</th>
+                    <th>Reject</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="details" *ngFor="let m of userResults  | filter: searchText | slice: (page-1) * pageSize : page * pageSize">
+                    <td>
+                        <p>{{ m.user.username }}</p>
+                    </td>
+                    <td>
+                        <p>{{ m.user.specialist_area }}</p>
+                    </td>
+                    <td>
+                        <p>{{ m.user.medicall_staffer }}</p>
+                    </td>
+                    <td>
+                        <p>{{ m.status }}</p>
+                    </td>
+                    <td (click)="approveRequest(m.id)">
+                        <button class="btn btn-primary">
+                    <i class="fa fa-edit"></i>
+                    </button>&nbsp;
+                    </td>
+
+                    <td>
+                        <button class="btn btn-danger" (click)="rejectRequest(m.id)">
+                    <i class="fa fa-trash"></i>
+                    </button>&nbsp;
+                    </td>
+
+                    <td>
+                        <button [routerLink]=" ['view-approval-request', m]" class="btn btn-success">
+                    <i class="fa fa-play"></i>
+                    </button>&nbsp;
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="userResults" class="col-sm-12 row d-flex justify-content-center">
+            <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="userResults.length">
+            </ngb-pagination>
+        </div>
+        <!-- all participants -->
+    </div>
+
+    <div *ngIf="loading" class="text text-center myloader">
+        <img height="200" width="auto" src="assets/images/tenor.gif">
+        <div class="text">
+            Loading....
+        </div>
+    </div>
+</div>
