@@ -32,9 +32,9 @@ export class ComplaintsRegisterComponent implements OnInit {
 
   getResults() {
     this.loading = true;
-    this.apiService.GetData('/ims_04/organograms').subscribe(data => {
+    this.apiService.GetData('/ims_04/complaints_register').subscribe(data => {
       this.loading = false;
-      console.log('all organograms', data['results']);
+      console.log('all complaints_register', data['results']);
       this.userResults = data['results'];
     },
       err => {

@@ -23,13 +23,37 @@ const routes: Routes = [
 
   {
     path: 'ims-05',
-    loadChildren: () => import('./ims/ims04/ims04.module').then((m) => m.Ims04Module),
+    loadChildren: () => import('./ims/ims05/ims05.module').then((m) => m.Ims05Module),
     canActivate: [AuthGuard]
   },
 
   {
     path: 'ims-06',
-    loadChildren: () => import('./ims/ims04/ims04.module').then((m) => m.Ims04Module),
+    loadChildren: () => import('./ims/ims06/ims06.module').then((m) => m.Ims06Module),
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'ims-07',
+    loadChildren: () => import('./ims/ims07/ims07.module').then((m) => m.Ims07Module),
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'ims-08',
+    loadChildren: () => import('./ims/ims08/ims08.module').then((m) => m.Ims08Module),
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'ims-09',
+    loadChildren: () => import('./ims/ims09/ims09.module').then((m) => m.Ims09Module),
+    canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'ims-10',
+    loadChildren: () => import('./ims/ims10/ims10.module').then((m) => m.Ims10Module),
     canActivate: [AuthGuard]
   },
 

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Ims04Component implements OnInit {
 
+  username = JSON.parse(localStorage.getItem("unique_name"));
+
   constructor() { }
 
   ngOnInit(): void {

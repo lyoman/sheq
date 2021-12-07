@@ -32,9 +32,9 @@ export class NeedsExpectationsComponent implements OnInit {
 
   getResults() {
     this.loading = true;
-    this.apiService.GetData('/ims_04/organograms').subscribe(data => {
+    this.apiService.GetData('/ims_04/needs_expetations').subscribe(data => {
       this.loading = false;
-      console.log('all organograms', data['results']);
+      console.log('all needs_expetations', data['results']);
       this.userResults = data['results'];
     },
       err => {
