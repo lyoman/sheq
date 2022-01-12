@@ -43,13 +43,13 @@ export class DashboardComponent implements OnInit {
     // this.getResults();
   
 
-    if(JSON.parse(localStorage.getItem('is_superuser')) == false) {
-      this.getApproval();
-    }
+    // if(JSON.parse(localStorage.getItem('is_superuser')) == false) {
+    //   this.getApproval();
+    // }
 
-    if(JSON.parse(localStorage.getItem('is_superuser')) == true) {
-      this.getAllApprovals();
-    }
+    // if(JSON.parse(localStorage.getItem('is_superuser')) == true) {
+    //   this.getAllApprovals();
+    // }
 
     if(JSON.parse(localStorage.getItem('is_superuser')) == false) {
       this.getOneUser();
@@ -61,20 +61,6 @@ export class DashboardComponent implements OnInit {
     console.log("is_superuser", JSON.parse(localStorage.getItem('is_superuser')));
   }
 
-  getResults() {
-    this.loading = true;
-    this.apiService.GetData('/patients').subscribe(data => {
-      this.loading = false;
-      console.log('all patients', data['results']);
-      this.userResults = data['results'];
-    },
-      err => {
-        console.log(err)
-        this.loading = false;
-        this.toastr.error('Error', err.message);
-      }
-    );
-  }
 
   pendingReq() {
     this.toastr.info('Pending', "Your Approval Request is still waiting for Approval");
@@ -88,7 +74,6 @@ export class DashboardComponent implements OnInit {
     this.loading = true;
     this.apiService.GetData('/users/').subscribe(data => {
       this.loading = false;
-      console.log('all users', data);
       this.userDetails = data;
     },
       err => {
@@ -103,7 +88,6 @@ export class DashboardComponent implements OnInit {
     this.loading = true;
     this.apiService.GetData('/users/?id='+JSON.parse(localStorage.getItem('user_id'))).subscribe(data => {
       this.loading = false;
-      console.log('one user', data);
       this.oneuserDetails = data[0];
     },
       err => {
@@ -118,12 +102,10 @@ export class DashboardComponent implements OnInit {
     this.loading = true;
     this.apiService.GetData('/approvals/?id='+JSON.parse(localStorage.getItem('user_id'))).subscribe(data => {
       this.loading = false;
-      console.log('approvals', data);
       if (data.count == 0) {
         this.userApproval = data['results'];
       } else {
         this.userApproval = data['results'][0];
-        console.log('one approvals', this.userApproval);
       }
       this.count = data.count;
       // console.log("count", this.userApproval['status']);
@@ -142,16 +124,13 @@ export class DashboardComponent implements OnInit {
     this.loading = true;
     this.apiService.GetData('/approvals/').subscribe(data => {
       this.loading = false;
-      console.log('all approvals', data);
       this.userAllApproval = data['results'];
       this.count = data.count;
-      console.log("all approvals", this.userAllApproval);
-      console.log('all approvals', this.userAllApproval);
     },
       err => {
         console.log(err)
         this.loading = false;
-        this.toastr.error('Error', err.message);
+        // this.toastr.error('Error', err.message);
       }
     );
   }
@@ -162,16 +141,11 @@ export class DashboardComponent implements OnInit {
 
       const formData = {
         user: this.regForm.get('user').value,
-        // approvedby: this.regForm.get('approvedby').value,
       }
 
-      console.log("formData", formData);
-
       this.apiService.PostData('/approvals/Approval_new/', formData).subscribe(data => {
-        console.log(data)
         this.loading = false;
         this.toastr.success('Success', 'Approval Request sent successfully');
-        // this.router.navigateByUrl('/dashboard');
         setTimeout(function () {
           location.reload();
         }, 2000);
@@ -181,7 +155,6 @@ export class DashboardComponent implements OnInit {
           if (err.status === 400) {
             this.toastr.error('Error.', 'Pliz fill in all fields!');
             this.toastr.error('Error', err.message);
-            // console.log(err.error.message);
           } else {
             console.log(err)
             this.toastr.error('Error', err.message);

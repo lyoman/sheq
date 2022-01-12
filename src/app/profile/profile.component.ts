@@ -57,7 +57,7 @@ export class ProfileComponent implements OnInit {
     this.loading = true;
     this.apiService.GetData('/users/user_detail/'+id).subscribe(data => {
       this.loading = false;
-      console.log('user data', data);
+      // console.log('user data', data);
       this.race = data;
     },
       err => {

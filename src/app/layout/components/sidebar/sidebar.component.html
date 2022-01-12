@@ -49,37 +49,91 @@
             </li>
         </div>
 
-        <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/osh/risk-assessment/issue-based">
+        <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/ims-05">
             <i class="fa fa-fw fa-plus-circle"></i>&nbsp;
             <span>{{ 'IMS - 05' }}</span>
         </a>
-        <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/suggestion-scheme">
+        <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/ims-06">
             <i class="fa fa-fw fa-clipboard"></i>&nbsp;
             <span>{{ 'IMS - 06' }}</span>
         </a>
 
 
-        <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/osh/risk-assessment/pretask">
+        <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/ims-07">
             <i class="fa fa-fw fa-plus-square"></i>&nbsp;
             <span>{{ 'IMS - 07' }}</span>
         </a>
-        <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/osh/risk-assessment/issue-based">
+
+            <div class="nested-menu">
+            <a (click)="addExpandClass2('pages')" class="list-group-item" [routerLinkActive]="['router-link-active']" routerLink="/ims-08">
+                <i class="fa fa-fw fa-address-card"></i>&nbsp;
+                <span>{{ 'IMS - 08' }}</span>
+            </a>
+            <li [class.expand]="showMenu2 === 'pages'" class="nested">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLinkActive]="['router-link-active']" routerLink="/ims-08/category/management-documents">
+                            <i class="fa fa-monument"></i>&nbsp;
+                            <span>{{ 'Management Documents' }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLinkActive]="['router-link-active']" routerLink="/ims-08/category/operational-planning-control">
+                            <i class="fa fa-monument"></i>&nbsp;
+                            <span>{{ 'Operational Planning Control' }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+
+<!--         <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/ims-08">
             <i class="fa fa-fw fa-plus-circle"></i>&nbsp;
             <span>{{ 'IMS - 08' }}</span>
         </a>
-        <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/suggestion-scheme">
+ --><!--         <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/ims-09">
             <i class="fa fa-fw fa-clipboard"></i>&nbsp;
             <span>{{ 'IMS - 09' }}</span>
+        </a> -->
+
+    <div class="nested-menu">
+            <a (click)="addExpandClass1('pages')" class="list-group-item" [routerLinkActive]="['router-link-active']" routerLink="/ims-09">
+                <i class="fa fa-fw fa-address-card"></i>&nbsp;
+                <span>{{ 'IMS - 09' }}</span>
+            </a>
+            <li [class.expand]="showMenu1 === 'pages'" class="nested">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLinkActive]="['router-link-active']" routerLink="/ims-09/category/monitoring-measurement-analysis">
+                            <i class="fa fa-monument"></i>&nbsp;
+                            <span>{{ 'Monitoring Measurement Analysis' }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLinkActive]="['router-link-active']" routerLink="/ims-09/category/management-review-minutes">
+                            <i class="fa fa-monument"></i>&nbsp;
+                            <span>{{ 'Management Review Minutes' }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLinkActive]="['router-link-active']" routerLink="/ims-09/category/action-plans">
+                            <i class="fa fa-monument"></i>&nbsp;
+                            <span>{{ 'Action Plans' }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+
+
+
+        <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/ims-10">
+            <i class="fa fa-fw fa-plus-square"></i>&nbsp;
+            <span>{{ 'IMS - 10' }}</span>
         </a>
 
 
-        <!-- <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/osh/risk-assessment/pretask">
-            <i class="fa fa-fw fa-plus-square"></i>&nbsp;
-            <span>{{ 'IMS - 10' }}</span>
-        </a> -->
-
-
-        <div class="nested-menu">
+<!--         <div class="nested-menu">
             <a (click)="addExpandClass('pages')" class="list-group-item">
                 <i class="fa fa-fw fa-address-card"></i>&nbsp;
                 <span>{{ 'IMS - 10' }}</span>
@@ -113,7 +167,7 @@
                 </ul>
             </li>
         </div>
-
+ -->
         <a (click)="onLoggedout()" [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/auth/login">
             <i class="fa fa-fw fa-power-off"></i>&nbsp;
             <span>{{ 'Log Out' }}</span>

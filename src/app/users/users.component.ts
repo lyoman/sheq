@@ -62,7 +62,7 @@ export class UsersComponent implements OnInit {
     this.loading = true;
     this.apiService.GetData('/users').subscribe(data => {
       this.loading = false;
-      console.log('all users', data);
+      // console.log('all users', data);
       this.userResults = data;
     },
       err => {

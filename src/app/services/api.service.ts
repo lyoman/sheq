@@ -46,12 +46,10 @@ export class ApiService {
 
 
   public GetData(endPoint: string): Observable<any> {
-    console.log('whats happening', this.portBaseUrl + endPoint);
     return this.http.get(this.portBaseUrl + endPoint, this.httpOptions);
   }
 
   public DeleteData(endPoint: string): Observable<any> {
-    console.log('whats happening', this.portBaseUrl + endPoint);
     return this.http.delete(this.portBaseUrl + endPoint, this.httpOptions);
   }
 

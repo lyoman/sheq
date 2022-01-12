@@ -4,7 +4,7 @@
     <h3 class="header-style" style="text-align: center;" *ngIf="!is_superuser">Welcome {{ username }} | {{ oneuserDetails.specialist_area }}</h3>
     <hr>
     <div class="row" *ngIf="!loading">
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center" *ngIf="is_superuser">
+        <!-- <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center" *ngIf="is_superuser">
             <div class="card-deck">
                 <div class="card mb-4">
                     <a [routerLinkActive]="['router-link-active']" [routerLink]="['/patients']">
@@ -19,9 +19,9 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div *ngIf="userApproval.status == 'Approved' && is_superuser == false" class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
+        <!-- <div *ngIf="userApproval.status == 'Approved' && is_superuser == false" class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
             <div class="card-deck">
                 <div class="card mb-4">
                     <a [routerLinkActive]="['router-link-active']" [routerLink]="['/patients']">
@@ -36,9 +36,9 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div *ngIf="count == 0 && is_superuser == false" class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
+        <!-- <div *ngIf="count == 0 && is_superuser == false" class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
             <div class="card-deck">
                 <div class="card mb-4">
                     <a [routerLinkActive]="['router-link-active']" (click)="saveRequest()">
@@ -53,9 +53,9 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div *ngIf="userApproval.status == 'Pending'" class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
+<!--         <div *ngIf="userApproval.status == 'Pending'" class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
             <div class="card-deck">
                 <div class="card mb-4">
                     <a [routerLinkActive]="['router-link-active']" (click)="pendingReq()">
@@ -70,9 +70,9 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div *ngIf="userApproval.status == 'Rejected'" class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
+<!--         <div *ngIf="userApproval.status == 'Rejected'" class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
             <div class="card-deck">
                 <div class="card mb-4">
                     <a [routerLinkActive]="['router-link-active']" (click)="rejectedReq()">
@@ -88,8 +88,8 @@
                 </div>
             </div>
         </div>
-
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center" *ngIf="is_superuser">
+ -->
+<!--         <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center" *ngIf="is_superuser">
             <div class="card-deck">
                 <div class="card mb-4">
                     <a [routerLinkActive]="['router-link-active']" [routerLink]="['/approvals']">
@@ -100,6 +100,131 @@
                             <small>
                                 <p class="card-text">View all approval Requests</p>
                             </small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
+            <div class="card-deck">
+                <div class="card mb-4">
+                    <a [routerLinkActive]="['router-link-active']" [routerLink]="['/ims-04']">
+                        <img class="card-img-top img-fluid" src="assets/images/dashboard/plan.png" alt="brand dev">
+
+                        <div class="card-body">
+                            <h4 class="card-title">IMS - 04</h4>
+                            <small>
+                      <p class="card-text">IMS Context of the organization</p>
+                      <p class="card-text">Clause 4.0</p>
+                    </small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
+            <div class="card-deck">
+                <div class="card mb-4">
+                    <a [routerLinkActive]="['router-link-active']" [routerLink]="['/ims-05']">
+                        <img class="card-img-top img-fluid" src="assets/images/dashboard/non-conforming.png" alt="packaging">
+
+                        <div class="card-body">
+                            <h4 class="card-title">IMS - 05</h4>
+                            <small>
+                      <p class="card-text">IMS Leadership and worker participation<p>
+                      <p class="card-text">Clause 5.0</p>
+                    </small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
+            <div class="card-deck">
+                <div class="card mb-4">
+                    <a [routerLinkActive]="['router-link-active']" [routerLink]="['/ims-06']">
+                        <img class="card-img-top img-fluid" src="assets/images/dashboard/she-reporting.png" alt="packaging">
+
+                        <div class="card-body">
+                            <h4 class="card-title">IMS - 06</h4>
+                            <small>
+                      <p class="card-text">IMS Planning</p>
+                      <p class="card-text">Clause 6.0</p>
+                    </small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
+            <div class="card-deck">
+                <div class="card mb-4">
+                    <a [routerLinkActive]="['router-link-active']" [routerLink]="['/ims-07']">
+                        <img class="card-img-top img-fluid" src="assets/images/dashboard/monitoring.png" alt="packaging">
+
+                        <div class="card-body">
+                            <h4 class="card-title">IMS - 07</h4>
+                            <small>
+                      <p class="card-text">IMS Support</p>
+                      <p class="card-text">Clause 7.0</p>
+                    </small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
+            <div class="card-deck">
+                <div class="card mb-4">
+                    <a [routerLinkActive]="['router-link-active']" [routerLink]="['/ims-08']">
+                        <img class="card-img-top img-fluid" src="assets/images/dashboard/investigation.png" alt="packaging">
+
+                        <div class="card-body">
+                            <h4 class="card-title">IMS - 08</h4>
+                            <small>
+                      <p class="card-text">IMS Operational Planning and Control</p>
+                      <p class="card-text">Clause 8.0</p>
+                    </small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
+            <div class="card-deck">
+                <div class="card mb-4">
+                    <a [routerLinkActive]="['router-link-active']" [routerLink]="['/ims-09']">
+                        <img class="card-img-top img-fluid" src="assets/images/dashboard/evaluation.png" alt="packaging">
+
+                        <div class="card-body">
+                            <h4 class="card-title">IMS - 09</h4>
+                            <small>
+                      <p class="card-text">IMS Perfomace Evaluation</p>
+                      <p class="card-text">Clause 9.0</p>
+                    </small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
+            <div class="card-deck">
+                <div class="card mb-4">
+                    <a [routerLinkActive]="['router-link-active']" [routerLink]="['/ims-10']">
+                        <img class="card-img-top img-fluid" src="assets/images/dashboard/sustainable.png" alt="packaging">
+
+                        <div class="card-body">
+                            <h4 class="card-title">IMS - 10</h4>
+                            <small>
+                      <p class="card-text">IMS Improvement</p>
+                      <p class="card-text">Clause 10.0</p>
+                    </small>
                         </div>
                     </a>
                 </div>
@@ -124,130 +249,6 @@
             </div>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
-            <div class="card-deck">
-              <div class="card mb-4">
-                <a [routerLinkActive]="['router-link-active']" [routerLink]="['/ims-04']">
-                  <img class="card-img-top img-fluid" src="assets/images/dashboard/plan.png" alt="brand dev">
-      
-                  <div class="card-body">
-                    <h4 class="card-title">IMS - 04</h4>
-                    <small>
-                      <p class="card-text">IMS Context of the organization</p>
-                      <p class="card-text">Clause 4.0</p>
-                    </small>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-      
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
-            <div class="card-deck">
-              <div class="card mb-4">
-                <a [routerLinkActive]="['router-link-active']" [routerLink]="['/ims-05']">
-                  <img class="card-img-top img-fluid" src="assets/images/dashboard/non-conforming.png" alt="packaging">
-      
-                  <div class="card-body">
-                    <h4 class="card-title">IMS - 05</h4>
-                    <small>
-                      <p class="card-text">IMS Leadership and worker participation<p>
-                      <p class="card-text">Clause 5.0</p>
-                    </small>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-      
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
-            <div class="card-deck">
-              <div class="card mb-4">
-                <a [routerLinkActive]="['router-link-active']" [routerLink]="['/ims-06']">
-                  <img class="card-img-top img-fluid" src="assets/images/dashboard/she-reporting.png" alt="packaging">
-      
-                  <div class="card-body">
-                    <h4 class="card-title">IMS - 06</h4>
-                    <small>
-                      <p class="card-text">IMS Planning</p>
-                      <p class="card-text">Clause 6.0</p>
-                    </small>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-      
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
-            <div class="card-deck">
-              <div class="card mb-4">
-                <a [routerLinkActive]="['router-link-active']" [routerLink]="['/ims-07']">
-                  <img class="card-img-top img-fluid" src="assets/images/dashboard/monitoring.png" alt="packaging">
-      
-                  <div class="card-body">
-                    <h4 class="card-title">IMS - 07</h4>
-                    <small>
-                      <p class="card-text">IMS Support</p>
-                      <p class="card-text">Clause 7.0</p>
-                    </small>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-      
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
-            <div class="card-deck">
-              <div class="card mb-4">
-                <a [routerLinkActive]="['router-link-active']" [routerLink]="['/ims-08']">
-                  <img class="card-img-top img-fluid" src="assets/images/dashboard/investigation.png" alt="packaging">
-      
-                  <div class="card-body">
-                    <h4 class="card-title">IMS - 08</h4>
-                    <small>
-                      <p class="card-text">IMS Operational Planning and Control</p>
-                      <p class="card-text">Clause 8.0</p>
-                    </small>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
-            <div class="card-deck">
-              <div class="card mb-4">
-                <a [routerLinkActive]="['router-link-active']" [routerLink]="['/ims-09']">
-                  <img class="card-img-top img-fluid" src="assets/images/dashboard/evaluation.png" alt="packaging">
-      
-                  <div class="card-body">
-                    <h4 class="card-title">IMS - 09</h4>
-                    <small>
-                      <p class="card-text">IMS Perfomace Evaluation</p>
-                      <p class="card-text">Clause 9.0</p>
-                    </small>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-      
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">
-            <div class="card-deck">
-              <div class="card mb-4">
-                <a [routerLinkActive]="['router-link-active']" [routerLink]="['/ims-10']">
-                  <img class="card-img-top img-fluid" src="assets/images/dashboard/sustainable.png" alt="packaging">
-      
-                  <div class="card-body">
-                    <h4 class="card-title">IMS - 10</h4>
-                    <small>
-                      <p class="card-text">IMS Improvement</p>
-                      <p class="card-text">Clause 10.0</p>
-                    </small>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
 
 
         <div class="col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4 align-items-center">

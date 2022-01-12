@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit {
         }
         this.pushRightClass = 'push-right';
         this.user = JSON.parse(localStorage.getItem('user'));
-        console.log("user", this.user);
+        // console.log("user", this.user);
         // this.firstName = this.user.firstName;
         // this.lastName = this.user.lastName;
         this.firstName = "Leo";

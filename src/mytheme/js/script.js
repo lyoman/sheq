@@ -6,7 +6,7 @@ Version      : 1.3
 
 (function($) {
     "use strict";
-    console.log("Hello from strict")
+    // console.log("Hello from strict")
 
     // Stick Sidebar
 

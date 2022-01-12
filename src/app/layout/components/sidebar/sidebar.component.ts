@@ -14,6 +14,7 @@ export class SidebarComponent implements OnInit {
   collapsed: boolean;
   showMenu: string;
   showMenu1: string;
+  showMenu2: string;
   pushRightClass: string;
   pushRightClass1: string;
 
@@ -44,6 +45,7 @@ export class SidebarComponent implements OnInit {
     this.collapsed = false;
     this.showMenu = '';
     this.showMenu1 = '';
+    this.showMenu2 = '';
     this.pushRightClass = 'push-right';
   }
 
@@ -63,6 +65,14 @@ export class SidebarComponent implements OnInit {
       this.showMenu1 = '0';
     } else {
       this.showMenu1 = element;
+    }
+  }
+
+  addExpandClass2(element: any) {
+    if (element === this.showMenu2) {
+      this.showMenu2 = '0';
+    } else {
+      this.showMenu2 = element;
     }
   }
 

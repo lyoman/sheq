@@ -9,7 +9,7 @@
     <hr>
 
 
-    <div class="row">
+    <div class="row" *ngIf="!loading">
         <!-- <h3 class="content-style" style="text-align: center;width: 100%;">{{ 'Submitted Results' }}</h3> -->
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <table class="table table-responsive table-hover table-striped" *ngIf="race">
@@ -97,4 +97,12 @@
         </div>
 
     </div>
+
+    <div *ngIf="loading" class="text text-center myloader">
+        <img height="200" width="auto" src="assets/images/tenor.gif">
+        <div class="text">
+            Loading....
+        </div>
+    </div>
+
 </div>

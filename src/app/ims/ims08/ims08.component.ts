@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { ActivatedRoute, Params } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { ApiService } from 'src/app/services/api.service';
+
 
 @Component({
   selector: 'app-ims08',
@@ -7,9 +12,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Ims08Component implements OnInit {
 
-  constructor() { }
+  username = JSON.parse(localStorage.getItem("unique_name"));
+
+  constructor(
+
+  ) { }
 
   ngOnInit(): void {
+
   }
 
 }
